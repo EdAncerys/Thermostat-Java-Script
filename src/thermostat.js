@@ -53,6 +53,7 @@ class Thermostat {
     if(this.temperature > this.LOW_USAGE_TEMPERATURE && this.temperature <= this.MEDIUM_USAGE_TEMPERATURE) {
       return 'medium-usage'
     };
+    return 'high-usage'
   }
 
 };

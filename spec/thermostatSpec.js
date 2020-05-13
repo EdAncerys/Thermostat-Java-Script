@@ -62,15 +62,23 @@ describe('Thermostat', function() {
   });
 
   describe('Power Usage', function(){
-    it('if temperature < 18 usage as low-usage', function() {
+    it('if temperature <= 18 usage as low-usage', function() {
       for(let i = 0; i < 3; i++) {
         thermostat.down();
       };
       expect(thermostat.energyUsage()).toBe('low-usage')
     });
 
-    it('if temperature < 18 && < 25 as medium-usage', function() {
+    it('if temperature < 18 && <= 25 as medium-usage', function() {
       expect(thermostat.energyUsage()).toBe('medium-usage')
+    });
+
+    it('if temperature > 25 as high-usage', function() {
+      thermostat.switchPowerSavingModeOff();
+      for(let i = 0; i < 6; i++) {
+        thermostat.up();
+      };
+      expect(thermostat.energyUsage()).toBe('high-usage')
     });
 
   });
