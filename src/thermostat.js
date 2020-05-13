@@ -14,8 +14,8 @@ class Thermostat {
   }
 
   up() {
-    if(this.temperature === this.MAXIMUM_TEMPERATURE) {
-      return;
+    if(this.PSM === true && this.temperature >= this.MAXIMUM_TEMPERATURE) {
+      return this.temperature = this.MAXIMUM_TEMPERATURE;
     }
     this.temperature += 1;
   }
@@ -23,12 +23,12 @@ class Thermostat {
   down() {
     if (this.temperature === this.MINIMUM_TEMPERATURE) {
       return;
-    }
+    };
     this.temperature -= 1;
   }
 
   isPowerSavingModeOn() {
-    return this.PSM === true
+    return this.PSM === true;
   }
 
 };
