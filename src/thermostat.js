@@ -39,4 +39,8 @@ class Thermostat {
     this.PSM = false
   }
 
+  resetTemperature() {
+    this.temperature = 20;
+  }
+
 };

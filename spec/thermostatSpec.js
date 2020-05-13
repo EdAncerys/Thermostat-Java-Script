@@ -56,4 +56,9 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(thermostat.MAXIMUM_TEMPERATURE)
   });
 
+  it('able to reset temperature', function() {
+    thermostat.resetTemperature();
+    expect(thermostat.temperature).toEqual(20);
+  });
+
 });
