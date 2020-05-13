@@ -24,4 +24,11 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(10)
   });
 
+  it('able to set max temperature', function() {
+    for(let i = 0; i < 6; i++) {
+      thermostat.up();
+    };
+    expect(thermostat.temperature).toEqual(25)
+  });
+
 });
