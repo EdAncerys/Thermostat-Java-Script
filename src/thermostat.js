@@ -10,4 +10,8 @@ class Thermostat {
     return this.temperature;
   }
 
+  up() {
+    this.temperature += 1
+  }
+
 };

@@ -7,4 +7,9 @@ describe('Thermostat', function() {
     expect(thermostat.getCurrentTemperature()).toEqual(20);
   });
 
+  it('can increment temperature', function() {
+    thermostat.up();
+    expect(thermostat.temperature).toEqual(21)
+  });
+
 });
