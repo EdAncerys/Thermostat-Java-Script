@@ -4,8 +4,9 @@ class Thermostat {
 
   constructor() {
     this.MINIMUM_TEMPERATURE = 10;
-    this.MAXIMUM_TEMPERATURE = 25;
-    this.PSM = true
+    this.MAXIMUM_TEMPERATURE_WITH_PSM = 25;
+    this.MAXIMUM_TEMPERATURE = 32;
+    this.PSM = true;
     this.temperature = 20;
   }
 
@@ -14,8 +15,11 @@ class Thermostat {
   }
 
   up() {
-    if(this.PSM === true && this.temperature >= this.MAXIMUM_TEMPERATURE) {
-      return this.temperature = this.MAXIMUM_TEMPERATURE;
+    if(this.PSM === true && this.temperature >= this.MAXIMUM_TEMPERATURE_WITH_PSM) {
+      return this.temperature = this.MAXIMUM_TEMPERATURE_WITH_PSM;
+    }
+    if(this.PSM === false && this.temperature >= this.MAXIMUM_TEMPERATURE) {
+      return this.temperature = this.MAXIMUM_TEMPERATURE
     }
     this.temperature += 1;
   }

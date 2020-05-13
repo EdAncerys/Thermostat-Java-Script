@@ -24,8 +24,8 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(10)
   });
 
-  it('able to set max temperature', function() {
-    for(let i = 0; i < 6; i++) {
+  it('able to set max temperature with PSM temperature', function() {
+    for(let i = 0; i < 10; i++) {
       thermostat.up();
     };
     expect(thermostat.temperature).toEqual(25)
@@ -40,12 +40,20 @@ describe('Thermostat', function() {
       thermostat.up();
     };
     expect(thermostat.isPowerSavingModeOn()).toBe(true);
-    expect(thermostat.temperature).toEqual(thermostat.MAXIMUM_TEMPERATURE)
+    expect(thermostat.temperature).toEqual(thermostat.MAXIMUM_TEMPERATURE_WITH_PSM)
   });
 
   it('can switch of PSM', function() {
     thermostat.switchPowerSavingModeOff();
     expect(thermostat.PSM).toBe(false);
+  });
+
+  it('can increase temperature up to max if PSM is off', function() {
+    thermostat.switchPowerSavingModeOff();
+    for(let i = 0; i < 13; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.temperature).toEqual(thermostat.MAXIMUM_TEMPERATURE)
   });
 
 });
