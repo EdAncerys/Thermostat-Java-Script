@@ -20,22 +20,25 @@ class Thermostat {
   up() {
     if(this.PSM === true && this.temperature >= this.MAXIMUM_TEMPERATURE_WITH_PSM) {
       return this.temperature = this.MAXIMUM_TEMPERATURE_WITH_PSM;
-    }
+    };
     if(this.PSM === false && this.temperature >= this.MAXIMUM_TEMPERATURE) {
       return this.temperature = this.MAXIMUM_TEMPERATURE
-    }
+    };
     this.temperature += 1;
   }
 
   down() {
-    if (this.temperature === this.MINIMUM_TEMPERATURE) {
+    if(this.PSM === true && this.temperature > this.MAXIMUM_TEMPERATURE_WITH_PSM) {
+      return this.temperature = this.MAXIMUM_TEMPERATURE_WITH_PSM;
+    };
+    if(this.temperature === this.MINIMUM_TEMPERATURE) {
       return;
     };
     this.temperature -= 1;
   }
 
   isPowerSavingModeOn() {
-    return this.PSM === true;
+    return this.PSM = true;
   }
 
   isPowerSavingModeOff() {
