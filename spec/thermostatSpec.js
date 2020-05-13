@@ -43,4 +43,9 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(thermostat.MAXIMUM_TEMPERATURE)
   });
 
+  it('can switch of PSM', function() {
+    thermostat.switchPowerSavingModeOff();
+    expect(thermostat.PSM).toBe(false);
+  });
+
 });
