@@ -61,4 +61,13 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(20);
   });
 
+  describe('Power Usage', function(){
+    it('if temperature < 18 usage as low-usage', function() {
+      for(let i = 0; i < 3; i++) {
+        thermostat.down();
+      };
+      expect(thermostat.energyUsage()).toBe('low-usage')
+    });
+  });
+
 });
