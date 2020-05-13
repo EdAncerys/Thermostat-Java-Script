@@ -68,6 +68,11 @@ describe('Thermostat', function() {
       };
       expect(thermostat.energyUsage()).toBe('low-usage')
     });
+
+    it('if temperature < 18 && < 25 as medium-usage', function() {
+      expect(thermostat.energyUsage()).toBe('medium-usage')
+    });
+
   });
 
 });
