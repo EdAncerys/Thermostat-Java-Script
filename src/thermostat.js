@@ -5,6 +5,7 @@ class Thermostat {
   constructor() {
     this.MINIMUM_TEMPERATURE = 10;
     this.MAXIMUM_TEMPERATURE = 25;
+    this.PSM = true
     this.temperature = 20;
   }
 
@@ -24,6 +25,10 @@ class Thermostat {
       return;
     }
     this.temperature -= 1;
+  }
+
+  isPowerSavingModeOn() {
+    return this.PSM === true
   }
 
 };

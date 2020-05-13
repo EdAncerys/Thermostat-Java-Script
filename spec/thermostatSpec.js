@@ -31,4 +31,8 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(25)
   });
 
+  it('have an option of power saving mode', function() {
+    expect(thermostat.isPowerSavingModeOn()).toBe(true)
+  });
+
 });
