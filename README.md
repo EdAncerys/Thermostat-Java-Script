@@ -19,6 +19,10 @@ You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25
 
 - Use Jasmine to Test-Drive Development of a thermostat
 - Using HTML/CSS to create a user interface on the web.
+- Using HTML/CSS to create a user interface on the web.
+- Use jQuery to build interactive functionality into a webpage.
+- Use AJAX to retrieve data from an API.
+
 
 #### To complete this challenge, you will need to:
 
@@ -26,3 +30,19 @@ You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25
 - Pass the test
 - Translate the next specification
 - Repeat until you've run out of tests
+
+#### Project set up
+
+- Git clone the repo
+- Navigate to root directory and run `bundle install`
+- Create the PostgreSQL database
+
+```
+$ psql postgres
+$ CREATE DATABASE thermostat;
+$ \c thermostat;
+$ CREATE TABLE data(id SERIAL PRIMARY KEY, temperature INT, power_saving BOOL);
+````
+
+#### How to run the application
+- Open your `index.html` in your browser.
