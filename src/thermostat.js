@@ -3,11 +3,12 @@
 class Thermostat {
 
   constructor() {
+    this.DEFAULT_TEMPERATURE = 20;
     this.MINIMUM_TEMPERATURE = 10;
     this.MAXIMUM_TEMPERATURE_WITH_PSM = 25;
     this.MAXIMUM_TEMPERATURE = 32;
     this.PSM = true;
-    this.temperature = 20;
+    this.temperature = this.DEFAULT_TEMPERATURE;
   }
 
   getCurrentTemperature() {
@@ -40,7 +41,7 @@ class Thermostat {
   }
 
   resetTemperature() {
-    this.temperature = 20;
+    this.temperature = this.DEFAULT_TEMPERATURE;
   }
 
 };
