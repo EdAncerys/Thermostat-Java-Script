@@ -8,25 +8,33 @@
   <title>Thermostat</title>
 </head>
 <body>
-  <h1>Thermostat</h1>
-  <h3>Current Temperature: <spam id='temperature'>Temperature</spam> C</h3>
-  <p>
-    <button id='temperature-up'>Temp: +</button>
-    <button id='temperature-down'>Temp: -</button>
-    <button id='temperature-reset'>Reset Temp</button>
-    Power saving mode is: <span id='power-mode'>on</span>
-    <button id='power-saving-on'>PSM on</button>
-    <button id='power-saving-off'>PSM off</button>
-  </p>
-  
-  <section>
-    <h3>Current Temperature: <span id='current-temperature'></span></h3>
-    <h4>Select Temperature in your City</h4>
-    <form id='select-city'>
-      <input id='current-city' placeholder='Enter City' type='text'>
-      <input value='Submit' type='submit' >
-    </form>
-  </section>
+
+  <header>
+    <h1>Thermostat</h1>
+  </header>
+  <div id='container'>
+    <h3>Current Temperature: <spam id='temperature'>Temperature</spam> C</h3>
+    <p>
+      <button id='temperature-up'>Temp: +</button>
+      <button id='temperature-down'>Temp: -</button>
+      <button id='temperature-reset'>Reset Temp</button>
+      Power saving mode is: <span id='power-mode'>on</span>
+      <button id='power-saving-on'>PSM on</button>
+      <button id='power-saving-off'>PSM off</button>
+    </p>
+    <section>
+      <h3 class='city-temp' >Current Temperature <span id='city-selected'>London</span>: <span id='current-temperature'>Load Error</span></h3>
+      <h3 class='city-temp' >Feels Like: <span id='feels-like-temperature'>Load Error</span></h3>
+      <h4>Select Temperature in your City</h4>
+      <form id='select-city'>
+        <input id='current-city' placeholder='Enter City' type='text'>
+        <input value='Submit' type='submit' >
+      </form>
+    </section>
+  </div>
+  <footer>
+    <p>&copy; <a href='https://github.com/EdAncerys'>Ed Ancerys</a></p>
+  </footer>
 
   <script src="src/thermostat.js"></script>
   <script src="interface.js"></script>

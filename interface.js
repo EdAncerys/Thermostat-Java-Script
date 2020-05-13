@@ -46,6 +46,9 @@ $(document).ready(function() {
     $.get(url + token + units, function(data) {
       $('#current-temperature').text(data.main.temp);
     });
+    $.get(url + token + units, function(data) {
+      $('#feels-like-temperature').text(data.main.feels_like);
+    });
   };
 
   displayWeather('London');
@@ -54,6 +57,8 @@ $(document).ready(function() {
     event.preventDefault();
     var city = $('#current-city').val();
     displayWeather(city);
+    $('#city-selected').text( city);
+    $('.city-temp').css('color', 'red');
   });
 
 
