@@ -18,6 +18,7 @@ You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25
 #### Learning Objectives covered
 
 - Use Jasmine to Test-Drive Development of a thermostat
+- Using HTML/CSS to create a user interface on the web.
 
 #### To complete this challenge, you will need to:
 
