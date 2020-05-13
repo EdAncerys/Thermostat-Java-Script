@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <link rel='stylesheet' type='text/css' href='style.css' >
   <title>Thermostat</title>
 </head>
 <body>
   <h1>Thermostat</h1>
+  <h3>Current Temperature: <spam id='temperature'>Temperature</spam> C</h3>
   <p>
     <button id='temperature-up'>Temp: +</button>
     <button id='temperature-down'>Temp: -</button>
     <button id='temperature-reset'>Reset Temp</button>
-    Power saving mode is: <span>on</span>
+    Power saving mode is: <span id='power-mode'>on</span>
     <button id='power-saving-on'>PSM on</button>
     <button id='power-saving-off'>PSM off</button>
   </p>
   
 
   <script src="src/thermostat.js"></script>
+  <script src="interface.js"></script>
 </body>
 </html>

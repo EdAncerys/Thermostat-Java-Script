@@ -38,7 +38,7 @@ class Thermostat {
     return this.PSM === true;
   }
 
-  switchPowerSavingModeOff() {
+  isPowerSavingModeOff() {
     this.PSM = false
   }
 

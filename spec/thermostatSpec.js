@@ -44,12 +44,12 @@ describe('Thermostat', function() {
   });
 
   it('can switch of PSM', function() {
-    thermostat.switchPowerSavingModeOff();
+    thermostat.isPowerSavingModeOff();
     expect(thermostat.PSM).toBe(false);
   });
 
   it('can increase temperature up to max if PSM is off', function() {
-    thermostat.switchPowerSavingModeOff();
+    thermostat.isPowerSavingModeOff();
     for(let i = 0; i < 13; i++) {
       thermostat.up();
     }
@@ -74,7 +74,7 @@ describe('Thermostat', function() {
     });
 
     it('if temperature > 25 as high-usage', function() {
-      thermostat.switchPowerSavingModeOff();
+      thermostat.isPowerSavingModeOff();
       for(let i = 0; i < 6; i++) {
         thermostat.up();
       };

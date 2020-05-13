@@ -1,0 +1,16 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(240, 240, 240);
+}
+
+.low-usage {
+  color: blue;
+}
+
+.medium-usage {
+  color: green;
+}
+
+.high-usage {
+  color: red;
+}
