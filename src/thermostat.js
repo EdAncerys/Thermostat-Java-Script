@@ -7,6 +7,7 @@ class Thermostat {
     this.MINIMUM_TEMPERATURE = 10;
     this.MAXIMUM_TEMPERATURE_WITH_PSM = 25;
     this.MAXIMUM_TEMPERATURE = 32;
+    this.LOW_USAGE_TEMPERATURE = 18
     this.PSM = true;
     this.temperature = this.DEFAULT_TEMPERATURE;
   }
@@ -45,7 +46,9 @@ class Thermostat {
   }
 
   energyUsage() {
-    return 'low-usage'
+    if(this.temperature <= this.LOW_USAGE_TEMPERATURE) {
+      return 'low-usage'
+    };
   }
 
 };
