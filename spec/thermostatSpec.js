@@ -17,4 +17,11 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(19)
   });
 
+  it('able to set min temperature', function() {
+    for(let i = 0; i < 11; i++) {
+      thermostat.down();
+    }
+    expect(thermostat.temperature).toEqual(10)
+  });
+
 });
