@@ -3,24 +3,35 @@ $(document).ready(function() {
   $('#power-mode').css('color', 'green');
   thermostatTemperature();
 
-  
   function thermostatTemperature() {
     $('#temperature').text(thermostat.temperature);
     $('#temperature').attr('class', thermostat.energyUsage());
   };
+
+  function saveThermostat() {
+    var city = document.getElementById("city-selected").textContent;
+    $('#save-temperature').val(thermostat.temperature)
+    $('#save-PSM').val(thermostat.PSM)
+    $('#save-city').val(city)
+  };
+
+  saveThermostat();
   
   $('#temperature-up').on('click', function() {
     thermostat.up();
+    saveThermostat();
     thermostatTemperature();
   }); 
   
   $('#temperature-down').click(function() {
     thermostat.down();
+    saveThermostat();
     thermostatTemperature();
   });
   
   $('#temperature-reset').click(function() {
     thermostat.resetTemperature();
+    saveThermostat();
     thermostatTemperature();
   });
   
@@ -28,6 +39,7 @@ $(document).ready(function() {
     thermostat.isPowerSavingModeOn();
     $('#power-mode').text('on');
     $('#power-mode').css('color', 'green');
+    saveThermostat();
     thermostatTemperature();
   });
 
@@ -35,6 +47,7 @@ $(document).ready(function() {
     thermostat.isPowerSavingModeOff();
     $('#power-mode').text('off');
     $('#power-mode').css('color', 'red');
+    saveThermostat();
     thermostatTemperature();
   });
 
@@ -57,9 +70,9 @@ $(document).ready(function() {
     event.preventDefault();
     var city = $('#current-city').val();
     displayWeather(city);
-    $('#city-selected').text( city);
+    $('#city-selected').text(city);
     $('.city-temp').css('color', 'red');
+    saveThermostat();
   });
-
 
 });

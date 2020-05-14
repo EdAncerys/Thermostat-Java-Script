@@ -7,8 +7,14 @@ class ThermostatApp < Sinatra::Base
   register Sinatra::Flash
 
   get '/' do
-    # File.read('thermostat.html')
-    send_file './public/thermostat.html'
+    # File.read('./public/thermostat.html')
+    # send_file './public/thermostat.html'
+    erb :thermostat_rb
+  end
+
+  post '/save-data' do
+    p params
+    redirect '/'
   end
 
 end
