@@ -41,7 +41,7 @@ You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25
 $ psql postgres
 $ CREATE DATABASE thermostat;
 $ \c thermostat;
-$ CREATE TABLE data(id SERIAL PRIMARY KEY, temperature INT, power_saving BOOL);
+$ CREATE TABLE data_saved(id SERIAL PRIMARY KEY, temperature integer NOT NULL, psm VARCHAR(10) NOT NULL, city VARCHAR(15) NOT NULL);
 ````
 
 #### How to run the application
