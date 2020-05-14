@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/flash'
-# require_relative './lib/chitter'
+require_relative './lib/thermostat'
 
 class ThermostatApp < Sinatra::Base 
   enable :sessions
@@ -13,7 +13,7 @@ class ThermostatApp < Sinatra::Base
   end
 
   post '/save-data' do
-    p params
+    Thermostat.save_to_DB(temperature: params[:save_temperature], psm: params[:save_PSM], city: params[:save_city])
     redirect '/'
   end
 

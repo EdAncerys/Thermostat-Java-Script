@@ -1,0 +1,2 @@
+CREATE DATABASE thermostat;
+CREATE TABLE data_saved(id SERIAL PRIMARY KEY, temperature integer NOT NULL, psm VARCHAR(10) NOT NULL, city VARCHAR(15) NOT NULL);
