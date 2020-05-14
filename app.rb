@@ -9,6 +9,7 @@ class ThermostatApp < Sinatra::Base
   get '/' do
     # File.read('./public/thermostat.html')
     # send_file './public/thermostat.html'
+    @data = Thermostat.list_from_DB
     erb :thermostat_rb
   end
 

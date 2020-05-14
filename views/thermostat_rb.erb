@@ -38,6 +38,17 @@
       <input id='save-city' placeholder='Save City' type='text' name='save_city' >
       <input value='Save Data' type='submit' >
     </form>
+
+    <% @data.each do |db| %>
+      <ul id='thermostat-data'>
+        <li>
+          <p>Temperature: <%= db['temperature'] %></p>
+          <p>PSM: <%= db['psm'] %></p>
+          <p>City: <%= db['city'] %></p>
+        </li>
+      </ul>
+    <% end %>
+
   </div>
   <footer>
     <p>&copy; <a href='https://github.com/EdAncerys'>Ed Ancerys</a></p>
