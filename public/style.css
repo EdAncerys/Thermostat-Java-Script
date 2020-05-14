@@ -25,6 +25,16 @@ footer {
   margin: auto;
   padding: 10px;
 }
+#thermostat-data {
+  margin: 10px;
+  font-size: 12px;
+  line-height: 0.5em;
+  color: #333;
+  border: 2px #333 solid;
+}
+li {
+  list-style: none;
+}
 a {
   text-decoration: none;
   color: #fff;
